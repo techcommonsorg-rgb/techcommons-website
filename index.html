@@ -243,7 +243,7 @@
   .ac-field select { appearance: none; cursor: pointer; }
   .ac-field select option { background: #0f172a; color: var(--white); }
   .ac-field textarea { resize: vertical; min-height: 80px; }
-  .ac-submit { margin-top: 1rem; width: 100%; background: linear-gradient(135deg, var(--blue), var(--pink-mid)); color: var(--white); border: none; padding: .85rem; border-radius: 50px; font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 600; cursor: pointer; transition: all var(--trans); box-shadow: 0 4px 18px rgba(29,78,216,.3); }
+  .ac-submit { margin-top: 1rem; width: 100%; background: linear-gradient(135deg, var(--blue), var(--pink-mid)); color: var(--white); border: none; padding: .85rem; border-radius: 50px; font-family: 'DM Sans', sans-serif; font-size: .92rem; font-weight: 600; cursor: pointer; transition: all var(--trans); box-shadow: 0 4px 18px rgba(29,78,216,.3); text-decoration: none; display: block; text-align: center; }
   .ac-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(29,78,216,.4); }
   .partner-logos { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
   .partner-logo-pill { background: rgba(255,255,255,.06); border: 1px solid #1e293b; border-radius: 50px; padding: .45rem 1.1rem; font-size: .8rem; color: #64748b; }
@@ -782,40 +782,8 @@ h <span class="op">=</span> <span class="fn">float</span>(<span class="fn">input
 
     <div class="ac-form-card">
       <h3>Register Your Facility</h3>
-      <p>Fill in this form and a TechCommons coordinator will be in touch within three business days to discuss how we can work together.</p>
-      <div class="ac-fields">
-        <div class="ac-field">
-          <label>Facility Name</label>
-          <input type="text" placeholder="e.g. Sunrise Aged Care, Parramatta">
-        </div>
-        <div class="ac-field">
-          <label>Your Name & Role</label>
-          <input type="text" placeholder="e.g. Sarah Chen, Activities Coordinator">
-        </div>
-        <div class="ac-field">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com.au">
-        </div>
-        <div class="ac-field">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="02 XXXX XXXX">
-        </div>
-        <div class="ac-field">
-          <label>Approximate Number of Residents Interested</label>
-          <select>
-            <option value="" disabled selected>Select a range</option>
-            <option>1 – 5 residents</option>
-            <option>6 – 15 residents</option>
-            <option>16 – 30 residents</option>
-            <option>30+ residents</option>
-          </select>
-        </div>
-        <div class="ac-field">
-          <label>Any Notes or Specific Requirements</label>
-          <textarea placeholder="e.g. residents have limited mobility, prefer morning sessions, already have iPads…"></textarea>
-        </div>
-        <button class="ac-submit">Submit Partnership Enquiry</button>
-      </div>
+      <p>Use our quick form and a TechCommons coordinator will be in touch within three business days to discuss how we can work together.</p>
+      <a class="ac-submit" href="https://docs.google.com/forms/d/1BC4nvsAB8pgUoSbNWwS_YkVTAU2-PZetrD5RDuve0tk/edit" target="_blank" rel="noopener noreferrer">Open Partnership Enquiry Form</a>
     </div>
   </div>
 </section>
@@ -1053,13 +1021,6 @@ h <span class="op">=</span> <span class="fn">float</span>(<span class="fn">input
 
     render();
   })();
-
-  // Aged care form submit
-  document.querySelector('.ac-submit').addEventListener('click', function() {
-    this.textContent = '✓ Enquiry Received — We\'ll be in touch shortly';
-    this.style.background = 'linear-gradient(135deg, #15803d, #166534)';
-    this.disabled = true;
-  });
 
   // Hero headline: phrase swap with a "backspace" delete animation.
   (function () {
