@@ -1,0 +1,10 @@
+{
+  "name": "techcommons-website",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "build": "npm run validate && node scripts/build.mjs"
+  }
+}
