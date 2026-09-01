@@ -1,17 +1,13 @@
-# TechCommons Website
+# TechCommons website
 
-This repository is configured for the TechCommons course vision static site (GitHub Pages).
+The production website for TechCommons, a youth-led community technology education initiative.
 
-## Deploy
+## Development
 
-1. Create (or clone) `https://github.com/serenaccli/techcommons.git` on your machine.
-2. Copy the contents of this folder into the repo root, ensuring `index.html` is at the top level.
-3. Commit and push.
-4. In GitHub, go to **Repo Settings → Pages**.
-5. Set **Source** to `Deploy from a branch` and choose:
-   - Branch: `main`
-   - Folder: `/ (root)`
-6. Save; wait a minute or two for Pages to publish.
+The site is dependency-free static HTML, CSS and JavaScript. Run `python3 -m http.server 8000` from the repository root for a local preview.
 
-After publishing, your site will be available at a URL like:
-`https://serenaccli.github.io/techcommons/`
+## Validation and build
+
+Run `npm run build`. The command validates public pages, metadata, local links, image alternative text and prohibited legacy content, then creates the static deployment in `dist/static` and a Sites-compatible worker in `dist/server`.
+
+GitHub Pages can publish directly from the repository root. Directory-based routes include their own `index.html`, so direct navigation and refresh work without a client-side router.
