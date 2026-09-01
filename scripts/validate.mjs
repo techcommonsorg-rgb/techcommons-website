@@ -50,6 +50,17 @@ for (const page of pages) {
   }
 }
 const allSource = pages.map((page) => readFileSync(page, 'utf8')).join('\n');
+const siteJs = readFileSync(join(root, 'assets', 'site.js'), 'utf8');
+const retiredPatterns = [
+  [/<form\b/i, 'visible form markup'],
+  [/data-email-form/i, 'retired email-form behaviour'],
+  [/(?:#interest|#school-enquiry|#organisation-enquiry|#support-enquiry)/i, 'retired form anchor'],
+  [/assets\/logo\.png/i, 'obsolete logo reference'],
+  [/docs\.google\.com\/forms/i, 'embedded Google Form URL']
+];
+for (const [pattern, description] of retiredPatterns) {
+  if (pattern.test(allSource) || pattern.test(siteJs)) errors.push(`${description} remains in source`);
+}
 const forbidden = [
   ['aged','care'].join('-'), ['aged','care'].join(' '), ['senior','digital-literacy'].join(' '),
   ['home','visit'].join(' '), ['volunteer','phone'].join(' '), ['Baptist','Care'].join(''),
