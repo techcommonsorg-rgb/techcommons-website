@@ -56,7 +56,7 @@ const retiredPatterns = [
   [/data-email-form/i, 'retired email-form behaviour'],
   [/(?:#interest|#school-enquiry|#organisation-enquiry|#support-enquiry)/i, 'retired form anchor'],
   [/assets\/logo\.png/i, 'obsolete logo reference'],
-  [/docs\.google\.com\/forms/i, 'embedded Google Form URL']
+  [/(?:5[–—-]6|5[–—-]8|Years 7[–—-]8)/i, 'obsolete school-year range']
 ];
 for (const [pattern, description] of retiredPatterns) {
   if (pattern.test(allSource) || pattern.test(siteJs)) errors.push(`${description} remains in source`);
